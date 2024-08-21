@@ -8,8 +8,9 @@ ca = certifi.where()
 class MongodbOperation:
 
     def __init__(self) -> None:
-
+        #MONGO_DB_URL =  ""
         self.client = pymongo.MongoClient(os.getenv('MONGO_DB_URL'),tlsCAFile=ca)
+        #self.client = pymongo.MongoClient(MONGO_DB_URL, tlsCAFile=ca)
         self.db_name="ineuron"
 
     def insert_many(self,collection_name,records:list):
